@@ -1,8 +1,4 @@
-#Python 3
-"""Zadaniem programu jest podanie wagi każdego pliku przed i po kompresji , w skompresowanym pliku .zip, następnie
-wyświetla informacje o ile mniej miejsca zajmuje plik .zip"""
 
-#Wywołanie funkcji
 import zipfile, os, sys
 
 """Pobranie od użytkownika ścieżki do pliku, w którym znajduje się plik .zip i Pobranie od użytkownika nazwy pliku .zip
@@ -70,7 +66,7 @@ def checkZipFile():
     print("Łączna waga plików po kompresji wynosi " + str(allFilesCompressSize) + " MB.")
 
     # Wypisanie wagi plików
-    print("\nskompresowane pliki są %sx mniejsze od oryginału!" % (round(allFilesSize / allFilesCompressSize, 2)))
+    print("\nskompresowane pliki są %sx mniejsze od oryginału!" % (round((allFilesSize / allFilesCompressSize - 1), 2)))
 
 
 # Funkcja if sprawdza czy w pliku zip, jest przynajmniej jeden plik, dopiero wtedy wykonuje się program
