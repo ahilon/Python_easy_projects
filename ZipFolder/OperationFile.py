@@ -24,12 +24,14 @@ def getInfo():
         filename = input("Wybierz nazwę dla tworzonego pliku ZIP:\n")
         filePath = input("Podaj ścieżke folderu do kompresji:\n")
         filePathName = input("Podaj nazwe pliku do konwersji:\n")
-        CreateFilePath = createZF.CreateOrAddFileToZip(filePath, filePathName, filename)
+        saveFilePathName = "C:\\Users\\ahilon\\Desktop\\Python_proste_programy\\ZipFolder\\Test"
+
+        CreateFilePath = createZF.CreateOrAddFileToZip(filePath, saveFilePathName, filePathName, filename)
         CreateFilePath.createZip()
-
-        checkZip = checkZF.CheckZip(filePath, filename)
+        """
+        checkZip = checkZF.CheckZip(saveFilePathName, filename)
         checkZip.checkZipFile()
-
+        """
 
 
 while True:

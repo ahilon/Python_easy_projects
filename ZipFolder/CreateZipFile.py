@@ -2,8 +2,8 @@ import zipfile,os
 
 class CreateOrAddFileToZip():
 
-    def __init__(self, filePath,filePathName, name = ""):
-        self.filePath = filePath
+    def __init__(self, filePath,saveFilePath, filePathName, name = ""):
+        self.saveFilePath= saveFilePath
         self.folder = str(filePath) + "\\" + str(filePathName)
         self.name = name
         self.filePathName = filePathName
@@ -24,8 +24,10 @@ class CreateOrAddFileToZip():
         print('gotowe!')
 
     def createZip(self):
-        os.chdir(self.filePath) # przechodzi do ścieżki podanej w filepath
-        folder = os.path.abspath(self.folder)
+        test = os.chdir(self.saveFilePath) # przechodzi do ścieżki, w której ma być zapisany plik
+        print(test)
+        folder = os.path.abspath(self.folder) #do zmiennej folder przypisuje ścieżkę bezwględną pliku
+        print(folder)
 
         zipFilename = self.name + '.zip'
         if os.path.exists(zipFilename):
