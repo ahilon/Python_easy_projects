@@ -8,11 +8,13 @@ def getInfo():
 
 
     if whatToDo.lower() == 'a':
+        fileName = input("Wybierz nazwę dla tworzonego pliku ZIP:\n")
+        saveFilePathName = input("Podaj ścieżke do zapisu pliku:\n")
         filePath = input("Podaj ścieżke folderu do kompresji:\n")
         filePathName = input("Podaj nazwe pliku do konwersji:\n")
-        filename = input("Podaj nazwe pliku Zip, do którego chcesz dodać plik:\n")
 
-        CreateFilePath = createZF.CreateOrAddFileToZip(filePath, filePathName, filename)
+
+        CreateFilePath = createZF.CreateOrAddFileToZip(filePath, saveFilePathName, filePathName, fileName)
         CreateFilePath.addFileToZip()
         """
         checkZip = checkZF.CheckZip(filePath, filePathName)
@@ -20,18 +22,22 @@ def getInfo():
         """
 
 
-    elif whatToDo.lower() == 'c':
-        filename = input("Wybierz nazwę dla tworzonego pliku ZIP:\n")
-        filePath = input("Podaj ścieżke folderu do kompresji:\n")
-        filePathName = input("Podaj nazwe pliku do konwersji:\n")
-        saveFilePathName = "C:\\Users\\ahilon\\Desktop\\Python_proste_programy\\ZipFolder\\Test"
 
-        CreateFilePath = createZF.CreateOrAddFileToZip(filePath, saveFilePathName, filePathName, filename)
+    elif whatToDo.lower() == 'c':
+        fileName = input("Wybierz nazwę dla tworzonego pliku ZIP:\n")
+        "
+        saveFilePathName = input("Podaj ścieżke do zapisu pliku:\n")
+
+        filePath = input("Podaj ścieżke folderu do kompresji:\n")
+
+        filePathName = input("Podaj nazwe pliku do konwersji:\n")
+
+        CreateFilePath = createZF.CreateOrAddFileToZip(filePath, saveFilePathName, filePathName, fileName)
         CreateFilePath.createZip()
-        """
-        checkZip = checkZF.CheckZip(saveFilePathName, filename)
+
+        checkZip = checkZF.CheckZip(saveFilePathName, fileName)
         checkZip.checkZipFile()
-        """
+
 
 
 while True:
