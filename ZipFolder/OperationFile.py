@@ -25,7 +25,7 @@ def getInfo():
 
     elif whatToDo.lower() == 'c':
         fileName = input("Wybierz nazwę dla tworzonego pliku ZIP:\n")
-        "
+
         saveFilePathName = input("Podaj ścieżke do zapisu pliku:\n")
 
         filePath = input("Podaj ścieżke folderu do kompresji:\n")
